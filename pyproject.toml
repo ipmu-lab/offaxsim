@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "offaxsim"
+version = "0.1.0"
+description = "4x4 TMM simulator for uniaxial multilayer stacks (Jones/Mueller)."
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.9"
+authors = [
+  {name = "Yurika Hoshino"},
+  {name = "Ryota Takaku"}
+]
+
+dependencies = [
+  "numpy>=1.23",
+  "scipy>=1.9",
+  "tqdm>=4.0"
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=7"
+]
+plot = [
+  "matplotlib>=3.6"
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
